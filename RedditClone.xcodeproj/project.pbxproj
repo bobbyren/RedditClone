@@ -17,6 +17,7 @@
 		8E9C3944216AE8880066EBE3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3943216AE8880066EBE3 /* PostsViewController.swift */; };
 		8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3946216AE8A40066EBE3 /* PostService.swift */; };
 		8E9C394A216AFD250066EBE3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3949216AFD250066EBE3 /* Post.swift */; };
+		8E9C394D216B05CB0066EBE3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C394C216B05CB0066EBE3 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8E9C3943216AE8880066EBE3 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		8E9C3946216AE8A40066EBE3 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		8E9C3949216AFD250066EBE3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8E9C394C216B05CB0066EBE3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		8E7D59EC216AE5F5005CA6B6 /* RedditClone */ = {
 			isa = PBXGroup;
 			children = (
+				8E9C394B216B05BC0066EBE3 /* Cell */,
 				8E9C3948216AFD150066EBE3 /* Models */,
 				8E9C3945216AE8960066EBE3 /* Services */,
 				8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */,
@@ -148,6 +151,14 @@
 				8E9C3949216AFD250066EBE3 /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E9C394B216B05BC0066EBE3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8E9C394C216B05CB0066EBE3 /* PostCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				8E7D59EE216AE5F5005CA6B6 /* AppDelegate.swift in Sources */,
 				8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */,
 				8E9C394A216AFD250066EBE3 /* Post.swift in Sources */,
+				8E9C394D216B05CB0066EBE3 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
