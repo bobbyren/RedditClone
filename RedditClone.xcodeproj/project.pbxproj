@@ -14,6 +14,8 @@
 		8E7D59F8216AE5F7005CA6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D59F6216AE5F7005CA6B6 /* LaunchScreen.storyboard */; };
 		8E7D5A03216AE5F8005CA6B6 /* RedditCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5A02216AE5F8005CA6B6 /* RedditCloneTests.swift */; };
 		8E7D5A0E216AE5F8005CA6B6 /* RedditCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5A0D216AE5F8005CA6B6 /* RedditCloneUITests.swift */; };
+		8E9C3944216AE8880066EBE3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3943216AE8880066EBE3 /* PostsViewController.swift */; };
+		8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3946216AE8A40066EBE3 /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8E7D5A09216AE5F8005CA6B6 /* RedditCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D5A0D216AE5F8005CA6B6 /* RedditCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditCloneUITests.swift; sourceTree = "<group>"; };
 		8E7D5A0F216AE5F8005CA6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9C3943216AE8880066EBE3 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		8E9C3946216AE8A40066EBE3 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 		8E7D59EC216AE5F5005CA6B6 /* RedditClone */ = {
 			isa = PBXGroup;
 			children = (
+				8E9C3945216AE8960066EBE3 /* Services */,
 				8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */,
 				8E7D59EF216AE5F5005CA6B6 /* ViewController.swift */,
+				8E9C3943216AE8880066EBE3 /* PostsViewController.swift */,
 				8E7D59F1216AE5F5005CA6B6 /* Main.storyboard */,
 				8E7D59F4216AE5F7005CA6B6 /* Assets.xcassets */,
 				8E7D59F6216AE5F7005CA6B6 /* LaunchScreen.storyboard */,
@@ -123,6 +129,14 @@
 				8E7D5A0F216AE5F8005CA6B6 /* Info.plist */,
 			);
 			path = RedditCloneUITests;
+			sourceTree = "<group>";
+		};
+		8E9C3945216AE8960066EBE3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8E9C3946216AE8A40066EBE3 /* PostService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9C3944216AE8880066EBE3 /* PostsViewController.swift in Sources */,
 				8E7D59F0216AE5F5005CA6B6 /* ViewController.swift in Sources */,
 				8E7D59EE216AE5F5005CA6B6 /* AppDelegate.swift in Sources */,
+				8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
