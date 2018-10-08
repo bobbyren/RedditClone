@@ -16,6 +16,7 @@
 		8E7D5A0E216AE5F8005CA6B6 /* RedditCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5A0D216AE5F8005CA6B6 /* RedditCloneUITests.swift */; };
 		8E9C3944216AE8880066EBE3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3943216AE8880066EBE3 /* PostsViewController.swift */; };
 		8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3946216AE8A40066EBE3 /* PostService.swift */; };
+		8E9C394A216AFD250066EBE3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C3949216AFD250066EBE3 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8E7D5A0F216AE5F8005CA6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9C3943216AE8880066EBE3 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		8E9C3946216AE8A40066EBE3 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		8E9C3949216AFD250066EBE3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		8E7D59EC216AE5F5005CA6B6 /* RedditClone */ = {
 			isa = PBXGroup;
 			children = (
+				8E9C3948216AFD150066EBE3 /* Models */,
 				8E9C3945216AE8960066EBE3 /* Services */,
 				8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */,
 				8E7D59EF216AE5F5005CA6B6 /* ViewController.swift */,
@@ -137,6 +140,14 @@
 				8E9C3946216AE8A40066EBE3 /* PostService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8E9C3948216AFD150066EBE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E9C3949216AFD250066EBE3 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 				8E7D59F0216AE5F5005CA6B6 /* ViewController.swift in Sources */,
 				8E7D59EE216AE5F5005CA6B6 /* AppDelegate.swift in Sources */,
 				8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */,
+				8E9C394A216AFD250066EBE3 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

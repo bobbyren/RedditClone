@@ -10,22 +10,38 @@
 import UIKit
 
 class PostService: NSObject {
+    static let shared = PostService()
+    
     let session = URLSession(configuration: .default)
-    func load() {
+    var allPosts: [String: Post] = [:]
+    
+    func load(completion: ((Bool)->Void)?) {
         guard let url = URL(string: "https://www.reddit.com/r/all/top.json?limit=2") else { return }
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { [weak self] (data, response, error) in
             //print("response \(response) error \(error)")
-            if nil != error {
-                print("error")
-            } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
+            if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                     let postData = json?["data"] as? [String: Any]
-                    let posts = postData?["children"] as? [[String: Any]]
+                    guard let posts = postData?["children"] as? [[String: Any]] else { return }
                     print("parsed posts: \(posts)")
+                    
+                    for postDict in posts {
+                        let post = Post(json: postDict)
+                        if let id = post.id {
+                            self?.allPosts[id] = post
+                        }
+                    }
+                    completion?(true)
                 } catch let err {
                     print("parse error: \(err)")
+                    completion?(false)
                 }
+            } else {
+                if nil != error {
+                    print("request error: \(error)")
+                }
+                completion?(false)
             }
         }
         task.resume()
