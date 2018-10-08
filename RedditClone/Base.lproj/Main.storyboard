@@ -60,14 +60,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="151" id="fiI-I4-UjW" customClass="PostCell" customModule="RedditClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="151"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="130" id="fiI-I4-UjW" customClass="PostCell" customModule="RedditClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fiI-I4-UjW" id="Ii5-41-rts">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-Uw-NU6">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-Uw-NU6">
                                             <rect key="frame" x="8" y="0.0" width="68" height="76"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-dN-PCA">
@@ -118,6 +118,7 @@
                                         <constraint firstItem="IcV-ua-JOD" firstAttribute="leading" secondItem="lV1-Du-tYy" secondAttribute="leading" id="JeP-eu-aFf"/>
                                         <constraint firstItem="Yk2-Uw-NU6" firstAttribute="top" secondItem="Ii5-41-rts" secondAttribute="top" id="N8N-dl-T7H"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ukx-iV-pyK" secondAttribute="trailing" constant="8" id="Qzg-ec-7VS"/>
+                                        <constraint firstAttribute="bottom" secondItem="IcV-ua-JOD" secondAttribute="bottom" constant="15.5" id="RJF-JM-aVG"/>
                                         <constraint firstItem="lV1-Du-tYy" firstAttribute="top" secondItem="Ii5-41-rts" secondAttribute="top" constant="8" id="Sgf-dO-t1w"/>
                                         <constraint firstItem="Yk2-Uw-NU6" firstAttribute="leading" secondItem="Ii5-41-rts" secondAttribute="leading" constant="8" id="XTd-R9-fVc"/>
                                         <constraint firstItem="IcV-ua-JOD" firstAttribute="top" secondItem="70i-BI-rwg" secondAttribute="bottom" constant="8" id="cgQ-qG-Nfm"/>
@@ -129,6 +130,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="constraintThumbnailWidth" destination="9HQ-wX-ERm" id="LSS-1B-NJI"/>
                                     <outlet property="labelAuthor" destination="ukx-iV-pyK" id="7aB-E2-Kws"/>
                                     <outlet property="labelComments" destination="IcV-ua-JOD" id="J9E-Gw-6zD"/>
                                     <outlet property="labelDate" destination="70i-BI-rwg" id="iAZ-39-TF9"/>

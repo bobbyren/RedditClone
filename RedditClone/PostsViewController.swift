@@ -20,7 +20,11 @@ class PostsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        let service = PostService()
+        
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 44
+
+        let service = PostService.shared
         service.load { [weak self] (success) in
             DispatchQueue.main.async {
                 if success {
@@ -45,5 +49,13 @@ class PostsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.row < posts.count else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell else { return UITableViewCell() }
+        let post: Post = posts[indexPath.row]
+        cell.configure(with: post)
+        return cell
     }
 }
