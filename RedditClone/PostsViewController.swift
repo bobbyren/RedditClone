@@ -58,4 +58,18 @@ class PostsViewController: UITableViewController {
         cell.configure(with: post)
         return cell
     }
+    
+    // MARK: - Tablesource Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < posts.count else { return }
+        let post: Post = posts[indexPath.row]
+        if let urlString = post.url, let url = URL(string: urlString) {
+            performSegue(withIdentifier: "toFullSizeImage", sender: url)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toFullSizeImage", let controller = segue.destination as? FullSizeImageViewController, let url = sender as? URL else { return }
+        controller.imageUrl = url
+    }
 }

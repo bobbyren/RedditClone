@@ -144,10 +144,42 @@
                             <outlet property="delegate" destination="6GY-qh-Tyi" id="cGW-zf-vuc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="jsS-qq-Fri" kind="show" identifier="toFullSizeImage" id="dnL-rk-Q8O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3X-qG-ZeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--Full Size Image View Controller-->
+        <scene sceneID="Don-Qj-kqA">
+            <objects>
+                <viewController id="jsS-qq-Fri" customClass="FullSizeImageViewController" customModule="RedditClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B1u-Pr-hIf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otf-Zy-lWK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="otf-Zy-lWK" firstAttribute="trailing" secondItem="cpX-GD-lVj" secondAttribute="trailing" id="5vr-Zk-HuU"/>
+                            <constraint firstItem="otf-Zy-lWK" firstAttribute="top" secondItem="cpX-GD-lVj" secondAttribute="top" id="AFK-Er-K13"/>
+                            <constraint firstItem="otf-Zy-lWK" firstAttribute="leading" secondItem="cpX-GD-lVj" secondAttribute="leading" id="MeT-wa-2lk"/>
+                            <constraint firstItem="otf-Zy-lWK" firstAttribute="bottom" secondItem="cpX-GD-lVj" secondAttribute="bottom" id="dRZ-de-oyF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cpX-GD-lVj"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="otf-Zy-lWK" id="IzU-m3-buk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NW-0F-R4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
