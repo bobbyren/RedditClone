@@ -10,7 +10,7 @@ import UIKit
 
 class FullSizeImageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
-    var imageUrl: URL?
+    var imageUrl: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +20,7 @@ class FullSizeImageViewController: UIViewController {
     }
     
     fileprivate func load() {
-        guard let url = imageUrl else { return }
-        DispatchQueue.global().async {
-            do {
-                let data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
-            } catch let error {
-                print("Could not load image because of error \(error)")
-            }
-        }
+        imageView.load(imageUrl: imageUrl)
     }
 
     /*

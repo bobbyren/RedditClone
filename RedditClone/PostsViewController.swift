@@ -63,13 +63,13 @@ class PostsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.row < posts.count else { return }
         let post: Post = posts[indexPath.row]
-        if let urlString = post.url, let url = URL(string: urlString) {
-            performSegue(withIdentifier: "toFullSizeImage", sender: url)
+        if let urlString = post.url {
+            performSegue(withIdentifier: "toFullSizeImage", sender: urlString)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toFullSizeImage", let controller = segue.destination as? FullSizeImageViewController, let url = sender as? URL else { return }
-        controller.imageUrl = url
+        guard segue.identifier == "toFullSizeImage", let controller = segue.destination as? FullSizeImageViewController, let urlString = sender as? String else { return }
+        controller.imageUrl = urlString
     }
 }
