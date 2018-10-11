@@ -17,18 +17,11 @@ class PostsViewController: UITableViewController {
     
     var posts: [Post] = []
     fileprivate let pageSize = 5
-    fileprivate var page = 0
     
     fileprivate var status: PostsStatus = .done
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44
@@ -47,7 +40,7 @@ class PostsViewController: UITableViewController {
     
     fileprivate func reloadTableData() {
         // TODO: sort in some form
-        posts = Array(PostService.shared.allPosts.values)
+        posts = PostService.shared.allPosts
         tableView.reloadData()
     }
 
@@ -88,20 +81,32 @@ class PostsViewController: UITableViewController {
     }
     
     fileprivate func configureLoadingCell(cell: UITableViewCell) {
-        if let label = cell.viewWithTag(0) as? UILabel {
+        if let label = cell.viewWithTag(1) as? UILabel {
             if status == .loading {
                 label.text = "Loading..."
             } else {
-                let start = page * pageSize + 1
+                let start = posts.count + 1
                 let end = start + pageSize - 1
                 label.text = "Load posts \(start) to \(end)"
             }
         }
     }
     fileprivate func loadNextPage() {
-        print("Done")
+        status = .loading
         let indexPath = IndexPath(row: posts.count, section: 0)
         tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        let service = PostService.shared
+        service.load(pageSize: pageSize) { [weak self] (success) in
+            self?.status = .done
+            DispatchQueue.main.async {
+                if success {
+                    self?.reloadTableData()
+                } else {
+                    print("Error received while loading posts")
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

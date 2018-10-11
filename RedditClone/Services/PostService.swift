@@ -13,10 +13,15 @@ class PostService: NSObject {
     static let shared = PostService()
     
     let session = URLSession(configuration: .default)
-    var allPosts: [String: Post] = [:]
+    var allPosts: [Post] = []
+    var after: String?
     
     func load(pageSize: Int, completion: ((Bool)->Void)?) {
-        guard let url = URL(string: "https://www.reddit.com/r/all/top.json?limit=\(pageSize)") else { return }
+        var urlString = "https://www.reddit.com/r/all/top.json?limit=\(pageSize)"
+        if let after = after {
+            urlString = "\(urlString)&after=\(after)"
+        }
+        guard let url = URL(string: urlString) else { return }
         let task = session.dataTask(with: url) { [weak self] (data, response, error) in
             //print("response \(response) error \(error)")
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
@@ -26,11 +31,16 @@ class PostService: NSObject {
                     guard let posts = postData?["children"] as? [[String: Any]] else { return }
                     print("parsed posts: \(posts)")
                     
+                    // if this is a fresh request, clear old posts
+                    if let val = postData?["after"] as? String{
+                        self?.after = val
+                    } else {
+                        self?.allPosts.removeAll()
+                    }
+                    
                     for postDict in posts {
                         let post = Post(json: postDict)
-                        if let id = post.id {
-                            self?.allPosts[id] = post
-                        }
+                        self?.allPosts.append(post)
                     }
                     completion?(true)
                 } catch let err {
@@ -39,7 +49,7 @@ class PostService: NSObject {
                 }
             } else {
                 if nil != error {
-                    print("request error: \(error)")
+                    print("request error: \(String(describing: error))")
                 }
                 completion?(false)
             }
