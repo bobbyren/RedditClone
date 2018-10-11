@@ -26,7 +26,7 @@ class PostCell: UITableViewCell {
         labelComments.text = "Comments: \(post.comments)"
         
         if let url = post.thumbnail {
-            // TODO: load thumbnail
+
             constraintThumbnailWidth.constant = 68
             thumbnailView.load(imageUrl: url)
         } else {

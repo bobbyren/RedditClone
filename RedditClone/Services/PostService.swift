@@ -15,8 +15,8 @@ class PostService: NSObject {
     let session = URLSession(configuration: .default)
     var allPosts: [String: Post] = [:]
     
-    func load(completion: ((Bool)->Void)?) {
-        guard let url = URL(string: "https://www.reddit.com/r/all/top.json?limit=2") else { return }
+    func load(pageSize: Int, completion: ((Bool)->Void)?) {
+        guard let url = URL(string: "https://www.reddit.com/r/all/top.json?limit=\(pageSize)") else { return }
         let task = session.dataTask(with: url) { [weak self] (data, response, error) in
             //print("response \(response) error \(error)")
             if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
