@@ -10,7 +10,6 @@
 		8E281C4E216CE41F0069B720 /* FullSizeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E281C4D216CE41F0069B720 /* FullSizeImageViewController.swift */; };
 		8E281C50216CE5A20069B720 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E281C4F216CE5A20069B720 /* UIImageView+Utils.swift */; };
 		8E7D59EE216AE5F5005CA6B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */; };
-		8E7D59F0216AE5F5005CA6B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D59EF216AE5F5005CA6B6 /* ViewController.swift */; };
 		8E7D59F3216AE5F5005CA6B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D59F1216AE5F5005CA6B6 /* Main.storyboard */; };
 		8E7D59F5216AE5F7005CA6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D59F4216AE5F7005CA6B6 /* Assets.xcassets */; };
 		8E7D59F8216AE5F7005CA6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D59F6216AE5F7005CA6B6 /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 		8E281C4F216CE5A20069B720 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		8E7D59EA216AE5F5005CA6B6 /* RedditClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E7D59EF216AE5F5005CA6B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8E7D59F2216AE5F5005CA6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E7D59F4216AE5F7005CA6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E7D59F7216AE5F7005CA6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				8E9C3948216AFD150066EBE3 /* Models */,
 				8E9C3945216AE8960066EBE3 /* Services */,
 				8E7D59ED216AE5F5005CA6B6 /* AppDelegate.swift */,
-				8E7D59EF216AE5F5005CA6B6 /* ViewController.swift */,
 				8E9C3943216AE8880066EBE3 /* PostsViewController.swift */,
 				8E281C4D216CE41F0069B720 /* FullSizeImageViewController.swift */,
 				8E281C4F216CE5A20069B720 /* UIImageView+Utils.swift */,
@@ -299,7 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E9C3944216AE8880066EBE3 /* PostsViewController.swift in Sources */,
-				8E7D59F0216AE5F5005CA6B6 /* ViewController.swift in Sources */,
 				8E7D59EE216AE5F5005CA6B6 /* AppDelegate.swift in Sources */,
 				8E281C4E216CE41F0069B720 /* FullSizeImageViewController.swift in Sources */,
 				8E9C3947216AE8A40066EBE3 /* PostService.swift in Sources */,
