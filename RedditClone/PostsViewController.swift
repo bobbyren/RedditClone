@@ -16,9 +16,9 @@ class PostsViewController: UITableViewController {
     }
     
     var posts: [Post] = []
-    fileprivate let pageSize = 5
+    fileprivate let pageSize = 50
     
-    fileprivate var status: PostsStatus = .done
+    fileprivate var status: PostsStatus = .loading
     
     override func viewDidLoad() {
         super.viewDidLoad()

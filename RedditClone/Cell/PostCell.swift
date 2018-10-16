@@ -22,7 +22,6 @@ class PostCell: UITableViewCell {
         self.post = post
         labelTitle.text = post.title ?? "N/A"
         labelAuthor.text = post.author ?? "N/A"
-        labelDate.text = post.created?.debugDescription
         labelComments.text = "Comments: \(post.comments)"
         
         if let url = post.thumbnail {
@@ -31,5 +30,35 @@ class PostCell: UITableViewCell {
         } else {
             constraintThumbnailWidth.constant = 0
         }
+        
+        if let date = post.created {
+            let hours = date.hoursAgo
+            if hours == 1 {
+                labelDate.text = "1 hour ago"
+            } else if hours > 1 {
+                labelDate.text = "\(hours) hours ago"
+            } else {
+                let min = date.minAgo
+                if min > 5 {
+                    labelDate.text = "\(min) minutes ago"
+                } else {
+                    labelDate.text = "Less than 5 minutes ago"
+                }
+            }
+        }
+    }
+}
+
+extension Date {
+    var hoursAgo: Int {
+        let seconds = self.timeIntervalSinceNow
+        return Int(floor(seconds / 3600))
+    }
+    
+    var minAgo: Int { // if less than an hour, return mins
+        let seconds = self.timeIntervalSinceNow
+        let hoursInSeconds = Double(hoursAgo) * 3600.0
+        let secondsAgo = seconds - hoursInSeconds
+        return Int(floor(secondsAgo / 60))
     }
 }
