@@ -69,12 +69,13 @@ class PostsViewController: UITableViewController {
     
     // MARK: - Tablesource Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row < posts.count + 1 else { return }
         if indexPath.row == posts.count {
             loadNextPage()
         } else {
             let post: Post = posts[indexPath.row]
-            if let urlString = post.url {
+            if let urlString = post.url, post.thumbnail != nil, post.thumbnail != "default" {
                 performSegue(withIdentifier: "toFullSizeImage", sender: urlString)
             }
         }
