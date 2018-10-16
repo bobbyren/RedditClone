@@ -27,15 +27,7 @@ class PostsViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 44
 
         let service = PostService.shared
-        service.load(pageSize: pageSize) { [weak self] (success) in
-            DispatchQueue.main.async {
-                if success {
-                    self?.reloadTableData()
-                } else {
-                    print("Error received while loading posts")
-                }
-            }
-        }
+        loadNextPage()
     }
     
     fileprivate func reloadTableData() {
